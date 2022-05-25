@@ -20,6 +20,7 @@
         <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.298" />
         <entry key="app/src/main/res/drawable/ic_quit.xml" value="0.2985" />
         <entry key="app/src/main/res/drawable/ic_settings.xml" value="0.2985" />
+        <entry key="app/src/main/res/drawable/ic_video_preview.xml" value="0.298" />
         <entry key="app/src/main/res/drawable/ic_warning.xml" value="0.298" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3007246376811594" />
         <entry key="app/src/main/res/layout/hypergrids.xml" value="0.378125" />

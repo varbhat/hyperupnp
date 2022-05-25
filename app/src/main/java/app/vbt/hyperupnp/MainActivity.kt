@@ -120,13 +120,13 @@ class MainActivity : AppCompatActivity(), Callbacks,
             this,
             PreferenceManager.getDefaultSharedPreferences(this).getInt("settings_grid_count", 2)
         )
-        mDeviceListAdapter = CustomListAdapter(mDeviceList,
+        mDeviceListAdapter = CustomListAdapter(this,mDeviceList,
             { c: CustomListItem -> navigateTo(c) }) { c: CustomListItem ->
             onLongClickCustomListItem(
                 c
             )
         }
-        mItemListAdapter = CustomListAdapter(mItemList,
+        mItemListAdapter = CustomListAdapter(this,mItemList,
             { c: CustomListItem -> navigateTo(c) }) { c: CustomListItem ->
             onLongClickCustomListItem(
                 c
@@ -542,6 +542,8 @@ class MainActivity : AppCompatActivity(), Callbacks,
 
     override fun onSharedPreferenceChanged(p0: SharedPreferences?, p1: String?) {
         if (p1 != null && p1 == "settings_grid_count")
+            recreate()
+        if (p1 != null && p1 == "video_preview")
             recreate()
         if (p1 != null && p1 == "settings_validate_devices") {
             refreshDevices()

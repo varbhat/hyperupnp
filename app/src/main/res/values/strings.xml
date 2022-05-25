@@ -35,4 +35,7 @@
     <string name="device_empty">No UPnP Devices Discovered in the Local Network!</string>
     <string name="action_count_items">Count Items</string>
     <string name="action_shuffle">Shuffle Items</string>
+    <string name="settings_title_media">Media</string>
+    <string name="video_preview">Video Preview</string>
+    <string name="enable_video_preview">Preview Video instead of Thumbnails (Resource Intensive)</string>
 </resources>

@@ -24,6 +24,15 @@
             app:title="@string/title_choose_player" />
     </PreferenceCategory>
 
+    <PreferenceCategory app:title="@string/settings_title_media">
+        <SwitchPreference
+            app:defaultValue="false"
+            app:key="video_preview"
+            app:icon="@drawable/ic_video_preview"
+            app:summary="@string/enable_video_preview"
+            app:title="@string/video_preview" />
+    </PreferenceCategory>
+
     <PreferenceCategory app:title="@string/settings_about_title">
 
         <PreferenceScreen

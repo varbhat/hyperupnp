@@ -23,6 +23,12 @@
             android:scaleType="fitXY"
             android:src="@drawable/ic_folder" />
 
+        <app.vbt.hyperupnp.SquareVideoView
+            android:id="@+id/videopreview"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
 
         <RelativeLayout
             android:id="@+id/container"
