@@ -1,0 +1,12 @@
+<resources>
+    <string-array name="player_entries">
+        <item>Open/Stream the File</item>
+        <item>Stream in mpv Player</item>
+        <item>Stream in VLC Player</item>
+    </string-array>
+    <string-array name="player_values">
+        <item>try_to_open</item>
+        <item>mpv</item>
+        <item>vlc</item>
+    </string-array>
+</resources>

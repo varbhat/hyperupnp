@@ -1,0 +1,2 @@
+Uses Maintained Fork of Cling which is LGPL Software.
+Jetty Server is Licensed under Eclipse Public License.

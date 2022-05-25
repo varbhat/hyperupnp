@@ -1,0 +1,61 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/settings_title_grid">
+        <SeekBarPreference
+            android:defaultValue="2"
+            android:max="10"
+            app:defaultValue="2"
+            app:icon="@drawable/ic_icon_grid"
+            app:key="settings_grid_count"
+            app:min="1"
+            app:showSeekBarValue="true"
+            app:title="@string/title_grid_columns" />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/settings_title_player">
+        <ListPreference
+            app:defaultValue="try_to_open"
+            app:entries="@array/player_entries"
+            app:entryValues="@array/player_values"
+            app:icon="@drawable/ic_icon_play"
+            app:key="settings_choose_player"
+            app:summary="@string/action_choose_player"
+            app:title="@string/title_choose_player" />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/settings_about_title">
+
+        <PreferenceScreen
+            app:icon="@drawable/ic_icon_info"
+            app:summary="@string/app_version"
+            app:title="@string/settings_about_version">
+
+            <intent
+                android:data="@string/settings_about_website_url"
+                app:action="android.intent.action.VIEW" />
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            app:icon="@drawable/ic_icon_person"
+            app:summary="@string/settings_about_developer_name"
+            app:title="@string/settings_about_developer">
+
+            <intent
+                android:data="@string/settings_about_developer_url"
+                app:action="android.intent.action.VIEW" />
+        </PreferenceScreen>
+
+
+        <PreferenceScreen
+            app:icon="@drawable/ic_icon_openinnew"
+            app:summary="@string/settings_about_website_url"
+            app:title="@string/settings_about_website">
+
+            <intent
+                android:data="@string/settings_about_website_url"
+                app:action="android.intent.action.VIEW" />
+        </PreferenceScreen>
+
+    </PreferenceCategory>
+</PreferenceScreen>

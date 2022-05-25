@@ -1,0 +1,24 @@
+name: Android Build
+
+on: push
+
+jobs:
+  build:
+    permissions: write-all
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Change wrapper permissions
+        run: chmod +x ./gradlew
+
+      - name: Build Debug APK    
+        run: ./gradlew assembleDebug
+          
+      - name: Publish Releases
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh config set prompt disabled
+          gh release create $(date +%s) -p app/build/outputs/apk/debug/app-debug.apk
