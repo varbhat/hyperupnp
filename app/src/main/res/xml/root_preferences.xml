@@ -31,6 +31,12 @@
             app:icon="@drawable/ic_video_preview"
             app:summary="@string/enable_video_preview"
             app:title="@string/video_preview" />
+        <SwitchPreference
+            app:defaultValue="true"
+            app:key="settings_cache"
+            app:icon="@drawable/ic_cache"
+            app:summary="@string/settings_cache"
+            app:title="@string/settings_title_cache" />
     </PreferenceCategory>
 
     <PreferenceCategory app:title="@string/settings_about_title">

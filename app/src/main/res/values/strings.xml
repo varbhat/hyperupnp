@@ -38,4 +38,6 @@
     <string name="settings_title_media">Media</string>
     <string name="video_preview">Video Preview</string>
     <string name="enable_video_preview">Preview Video instead of Thumbnails (Resource Intensive)</string>
+    <string name="settings_title_cache">Cache</string>
+    <string name="settings_cache">Cache Thumbnails</string>
 </resources>

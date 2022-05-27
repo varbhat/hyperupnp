@@ -545,6 +545,8 @@ class MainActivity : AppCompatActivity(), Callbacks,
             recreate()
         if (p1 != null && p1 == "video_preview")
             recreate()
+        if (p1 != null && p1 == "settings_cache")
+            recreate()
         if (p1 != null && p1 == "settings_validate_devices") {
             refreshDevices()
             refreshCurrent()

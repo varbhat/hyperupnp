@@ -12,7 +12,9 @@ import androidx.recyclerview.widget.RecyclerView
 import app.vbt.hyperupnp.models.CustomListItem
 import app.vbt.hyperupnp.models.DeviceModel
 import app.vbt.hyperupnp.models.ItemModel
+import coil.ImageLoader
 import coil.load
+import coil.request.ImageRequest
 import java.util.*
 
 class CustomListAdapter(
@@ -27,6 +29,14 @@ class CustomListAdapter(
     var customListFilterList = ArrayList<CustomListItem>()
 
     private var videoPreviewEnabled = false
+    private var shouldcache = true
+
+
+    // No Cache Coil Image Loader
+    private val nocacheILoader = ImageLoader.Builder(ctx)
+        .memoryCache { null }
+        .diskCache { null }
+        .build()
 
     init {
         customListFilterList = customListItems
@@ -61,6 +71,8 @@ class CustomListAdapter(
         val view = LayoutInflater.from(parent.context).inflate(R.layout.hypergrids, parent, false)
         videoPreviewEnabled =
             PreferenceManager.getDefaultSharedPreferences(ctx).getBoolean("video_preview", false)
+        shouldcache =
+            PreferenceManager.getDefaultSharedPreferences(ctx).getBoolean("settings_cache", true)
         return ViewHolder(view, onItemClick, onItemLongClick)
     }
 
@@ -70,10 +82,22 @@ class CustomListAdapter(
 
 
         if (holder.entry is DeviceModel || holder.entry is ItemModel && (holder.entry as ItemModel).isContainer || !videoPreviewEnabled) {
-            holder.imageView.load(holder.entry.iconUrl) {
-                crossfade(true)
-                placeholder(holder.entry.icon)
-                error(holder.entry.icon)
+            if (shouldcache) {
+                holder.imageView.load(holder.entry.iconUrl) {
+                    crossfade(true)
+                    placeholder(holder.entry.icon)
+                    error(holder.entry.icon)
+                }
+            } else {
+                nocacheILoader.enqueue(
+                    ImageRequest.Builder(ctx)
+                        .target(holder.imageView)
+                        .data(holder.entry.iconUrl)
+                        .crossfade(true)
+                        .placeholder(holder.entry.icon)
+                        .error(holder.entry.icon)
+                        .build()
+                )
             }
             holder.imageView.visibility = View.VISIBLE
             holder.videoView.visibility = View.GONE
