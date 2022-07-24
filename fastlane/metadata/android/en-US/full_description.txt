@@ -1,0 +1,5 @@
+<i>Hyper UPnP</i> is an Android UPnP/DLNA client, letting you stream media from PC, NAS or any other device running UPnP/DLNA compliant media server to your Android Device.
+
+Media can be streamed or downloaded to the device. <i>Hyper UPnP</i> focuses on delivering a simple and lightweight experience. It uses <i>Modern Material You</i> design, and also supports searching.
+
+Note that <i>Hyper UPnP</i> and your DLNA serving device must be on same network. Transcoding in DLNA Server is not at all necessary because modern media players like <a href='https://github.com/mpv-android/mpv-android' target='_blank' rel='nofollow'>mpv-android</a> and <a href='https://www.videolan.org/vlc/download-android.html' target='_blank' rel='nofollow'>VLC</a> can play Media of High Resoultion(or any resoultion) and supports most codecs you ever need.

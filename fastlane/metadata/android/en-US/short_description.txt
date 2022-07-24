@@ -1,0 +1,1 @@
+Stream Media from PC, NAS or any other device running UPnP/DLNA compliant server
